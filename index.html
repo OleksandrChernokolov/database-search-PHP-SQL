@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+    <meta name="description" content="Search for the city you are interested in and get basic information about it such as: status of the city, population, country in which it is located and country abbreviation, coordinates of the city.">
+    <link rel="icon" href="./img/search.png">
+    <link rel="apple-touch-icon" href="./img/search.png">
+    <link rel="stylesheet" href="./style.css">
+    <title>Search city info</title>
+</head>
+
+<body>
+    <main>
+        <section class="search-block">
+            <h1>Find a city and get information about it</h1>
+            <p>(Capitals, cities, towns)</p>
+            <form id="search-form">
+                <label>
+                   <input id="search" type="text" spellcheck="false" autocomplete="off" placeholder="City name"> 
+                   <button id="reset" type="reset" title="Click me to clear the input field">&#215;</button>
+                </label>
+                
+                
+                <output>
+                    <ul id="hint"></ul>
+                </output>
+            </form>
+        </section>
+
+        <section class="result-block">
+            <ul id="result"></ul>
+        </section>
+    </main>
+    <div class="mask"></div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

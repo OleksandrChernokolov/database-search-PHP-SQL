@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+main {
+    color: white;
+    z-index: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+.search-block {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.search-block h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.search-block p {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.search-block h1,
+.search-block span,
+.search-block p {
+    text-shadow:
+        1px 0px 1px black, 0px 1px 1px #000,
+        2px 1px 1px black, 1px 2px 1px #000,
+        3px 2px 1px black, 2px 3px 1px #000,
+        4px 3px 1px black, 3px 4px 1px #000;
+}
+
+form {
+    width: 100%;
+}
+
+form label {
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.hint-shown input {
+    outline: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+form label button[type="reset"] {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 3%;
+    color: #666;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+form label button[type="reset"]:hover {
+    color: lightgrey;
+}
+
+form output {
+    position: relative;
+    display: none;
+}
+
+.hint-shown output {
+    display: block;
+}
+
+form ul {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-top: none;
+    overflow-x: hidden;
+}
+
+form ul li {
+    cursor: pointer;
+}
+
+form ul li:hover {
+    background-color: rgba(225, 225, 225, 0.3);
+}
+
+form ul li.active {
+    background-color: rgba(225, 225, 225, 0.5);
+}
+
+form ul li em {
+    color: gray;
+}
+
+.hint-info {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: 1px dotted gray;
+    text-align: end;
+    pointer-events: none;
+}
+
+
+/* Searching result */
+.result-block ul {
+    display: none;
+    background-color: rgba(225, 225, 225, 0.8);
+    box-shadow: rgba(225, 225, 225, 0.5) 0px 5px 15px;
+    color: black;
+    width: 100%;
+}
+
+.result-block ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.result-block ul li:hover {
+    background-color: rgba(225, 225, 225, 0.3);
+}
+
+.result-block ul li em {
+    font-weight: normal;
+}
+
+
+@media only screen and (min-width: 621px) {
+    body {
+        background-image: url("./img/worldmap.jpg");
+    }
+    main {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 600px;
+    }
+
+    .search-block {
+        row-gap: 0.5rem;
+    }
+
+    .search-block h1 {
+        font-size: 1.6rem;
+    }
+
+    .search-block p {
+        font-size: 1.2rem;
+    }
+
+    form input {
+        height: 3rem;
+        border-radius: 1.2rem;
+        padding: 0 1rem;
+        font-size: 1.2rem;
+    }
+
+    form label button[type="reset"] {
+        height: 1.5rem;
+        width: 1.5rem;
+        font-size: 150%;
+    }
+
+    form ul {
+        font-size: 1rem;
+        border-bottom-left-radius: 1.2rem;
+        border-bottom-right-radius: 1.2rem;
+    }
+
+    form ul li {
+        padding: 0.8rem 1rem;
+    }
+
+    /* Searching result */
+    .result-block {
+        margin-top: 100px;
+    }
+
+    .result-block ul {
+        border-radius: 1rem;
+        padding: 1rem 0;
+        font-size: 1.2rem;
+    }
+
+    .result-block ul li {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .hint-shown {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1vw;
+    }
+
+    .hint-shown input {
+        position: sticky;
+        top: 0;
+    }
+
+    body {
+        background-image: url("./img/m-worldmap.jpg");
+        padding-top: 15%;
+    }
+
+    main {
+        padding: 1vw;
+        width: 100%;
+    }
+
+    .search-block {
+        row-gap: 2.2vw;
+    }
+
+    .search-block h1 {
+        font-size: 7vw;
+    }
+
+    .search-block p {
+        font-size: 4.4vw;
+    }
+
+    form input {
+        height: 12vw;
+        border-radius: 6vw;
+        padding: 0 4vw;
+        font-size: 4.8vw;
+    }
+
+    form label button[type="reset"] {
+        height: 8vw;
+        width: 8vw;
+        font-size: 150%;
+    }
+
+    form ul {
+        font-size: 4vw;
+        border-bottom-left-radius: 6vw;
+        border-bottom-right-radius: 6vw;
+    }
+
+    form ul li {
+        padding: 3vw 4vw;
+    }
+
+    /* Searching result */
+    .result-block {
+        margin-top: 20vw;
+    }
+
+    .result-block ul {
+        border-radius: 6vw;
+        padding: 4vw 0;
+        font-size: 4.4vw;
+    }
+
+    .result-block ul li {
+        padding: 2vw 4vw;
+    }
+}
