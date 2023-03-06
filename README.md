@@ -19,6 +19,7 @@ https://www.search-city-info.online/
 
 ## How to use
 1. **Using the search**
+
 In this example, the JavaScript file sends a fetch request with the search text and the "action" variable to the core.php file, which calls the necessary function
 in the function.php file according to the value in "action". This allows you to put different functions in the function.php file and call them independently.
 In this case, 2 functions are used: search as you type and search for information about the city when you click on one of the cities found.
@@ -30,6 +31,7 @@ This way you can use any kind of php requests and have any JavaScript file struc
 + Make sure you have keywords column in target table.(possible to search without keywords, but performance will be worse).
 
 2. **Creating keywords**
+   
 In createKeywords.php you can find a function which slect a string from target column and divide it in single words which are separated by "+". 
 There is an array with exception or service words, which can be used to exclude unwanted words from keywords column. How to use the function(an example):
 + Open the createKeywords.php file and connect to the database by entering the hostname, login, password and database name.
